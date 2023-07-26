@@ -1,6 +1,6 @@
 'use strict';
 
-const numbers = [7, 10, 1, 5, 2];
+const numbers = { test: 123, test2: 1234567 };
 numbers.field2 = 'Value2';
 numbers[-10] = 'Value3';
 numbers.field1 = 'Value1';
@@ -11,7 +11,7 @@ Object.defineProperty(numbers, 'newField', {
   value: 'valueOfNewField',
 });
 
-Object.prototype.inheritedProperty = 'inherited';
+Object.prototype.inheritedProperty = function() {  };
 
 for (const i in numbers) {
   const value = numbers[i];

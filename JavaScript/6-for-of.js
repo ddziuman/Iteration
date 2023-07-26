@@ -12,12 +12,12 @@ for (const value of numbers) {
 
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 arr[Symbol.iterator] = function() {
-  let index = 0;
   const step = 2;
+  let index = 0;
   return {
     next: () => {
       const result = {
-        value: this[index],
+        value: index,
         done: false
       };
       if (index >= this.length) {
@@ -33,3 +33,10 @@ arr[Symbol.iterator] = function() {
 for (const value of arr) {
   console.log(value);
 }
+
+arr.push(10, 12, 13, 14, 15, 16);
+for (const value of arr) {
+  console.log(value);
+}
+
+console.dir({ whatIsIteratorInsideSymbol: Symbol.iterator }); // constant value of Symbol ('well-known')

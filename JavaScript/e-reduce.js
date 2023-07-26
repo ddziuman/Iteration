@@ -8,7 +8,7 @@ console.log({ res, count });
 
 const reduce = (fn, acc, [cur, ...rest]) => (
   cur === undefined ? acc : reduce(fn, fn(acc, cur), rest)
-);
+); // условие выхода
 
 const res2 = reduce(sum, 0, arr);
 console.log({ res2 });

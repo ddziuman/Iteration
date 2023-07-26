@@ -29,6 +29,6 @@ const timer = setInterval(() => {
 (async () => {
   for await (const number of range) {
     console.log(number);
-  }
+  } // может это скрытый синхронный код, под начинкой асинхронного?)
   clearInterval(timer);
 })();
